@@ -1,0 +1,46 @@
+
+header {
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+}
+header .btn-group, header .btn {
+    -webkit-app-region: no-drag;
+}
+.window-actions {
+    display: block;
+    width: 77px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 2px;
+    right: 0px;
+    z-index: 99;
+}
+.window-actions > li {
+    display: inline-block;
+    margin: 0 0 0 3px;
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+    text-align: center;
+    -webkit-app-region: no-drag;
+}
+.window-actions > li:hover {
+    opacity: 1;
+}
+.dropdown-content .list-group-item {
+    padding: 6px 10px;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.toolbar-footer h1 i {
+    font-size: 11px;
+    position: relative;
+    top: 1px;
+    left: 1px;
+    cursor: pointer;
+}
+.toolbar-footer h1 i:before, .toolbar-footer h1 > span {
+    cursor: pointer;
+}

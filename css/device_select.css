@@ -1,0 +1,22 @@
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 182px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 99;
+    background-color: #f5f5f4;
+    margin-left: 2px;
+    border-radius: 4px;
+    overflow: hidden;
+    -webkit-app-region: no-drag;
+    top: 24px;
+}
+
+.btn-dropdown + .dropdown-content .list-group-item:focus {
+    background-color: #116cd6;
+    color: #ffffff;
+}
+.btn-dropdown + .dropdown-content .list-group-item:hover {
+    background-color: #ddd;
+}
+

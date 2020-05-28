@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?4kes46');
+    src:  url('../fonts/icomoon.eot?4kes46#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?4kes46') format('truetype'),
+    url('../fonts/icomoon.woff?4kes46') format('woff'),
+    url('../fonts/icomoon.svg?4kes46#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="i-"], [class*=" i-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    position: relative;
+    top: 2px;
+}
+
+.i-logo:before {
+    content: "\e900";
+}
+.i-old-phone:before {
+    content: "\e901";
+}
+.i-document-file-mp3:before {
+    content: "\e902";
+}
+.i-document-file-mp31:before {
+    content: "\e903";
+}
+.i-usb:before {
+    content: "\e904";
+}
+.i-flash:before {
+    content: "\e904";
+}
+.i-drive:before {
+    content: "\e904";
+}
+.i-pencil2:before {
+    content: "\e906";
+}
+.i-location:before {
+    content: "\e947";
+}

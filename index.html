@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photon</title>
+  <link rel="stylesheet" type="text/css" href="./index.css" />
+
+  <style type="text/css">
+
+    .text-center {
+      text-align: center;
+    }
+    svg.tea {
+      --secondary: #d4d4d4;
+    }
+    svg.tea #teabag {
+      transform-origin: top center;
+      transform: rotate(3deg);
+      animation: swing 2s infinite;
+    }
+    svg.tea #steamL {
+      stroke-dasharray: 13;
+      stroke-dashoffset: 13;
+      animation: steamLarge 2s infinite;
+    }
+    svg.tea #steamR {
+      stroke-dasharray: 9;
+      stroke-dashoffset: 9;
+      animation: steamSmall 2s infinite;
+    }
+    @-moz-keyframes swing {
+      50% {
+        transform: rotate(-3deg);
+      }
+    }
+    @-webkit-keyframes swing {
+      50% {
+        transform: rotate(-3deg);
+      }
+    }
+    @-o-keyframes swing {
+      50% {
+        transform: rotate(-3deg);
+      }
+    }
+    @keyframes swing {
+      50% {
+        transform: rotate(-3deg);
+      }
+    }
+    @-moz-keyframes steamLarge {
+      0% {
+        stroke-dashoffset: 13;
+        opacity: 0.6;
+      }
+      100% {
+        stroke-dashoffset: 39;
+        opacity: 0;
+      }
+    }
+    @-webkit-keyframes steamLarge {
+      0% {
+        stroke-dashoffset: 13;
+        opacity: 0.6;
+      }
+      100% {
+        stroke-dashoffset: 39;
+        opacity: 0;
+      }
+    }
+    @-o-keyframes steamLarge {
+      0% {
+        stroke-dashoffset: 13;
+        opacity: 0.6;
+      }
+      100% {
+        stroke-dashoffset: 39;
+        opacity: 0;
+      }
+    }
+    @keyframes steamLarge {
+      0% {
+        stroke-dashoffset: 13;
+        opacity: 0.6;
+      }
+      100% {
+        stroke-dashoffset: 39;
+        opacity: 0;
+      }
+    }
+    @-moz-keyframes steamSmall {
+      10% {
+        stroke-dashoffset: 9;
+        opacity: 0.6;
+      }
+      80% {
+        stroke-dashoffset: 27;
+        opacity: 0;
+      }
+      100% {
+        stroke-dashoffset: 27;
+        opacity: 0;
+      }
+    }
+    @-webkit-keyframes steamSmall {
+      10% {
+        stroke-dashoffset: 9;
+        opacity: 0.6;
+      }
+      80% {
+        stroke-dashoffset: 27;
+        opacity: 0;
+      }
+      100% {
+        stroke-dashoffset: 27;
+        opacity: 0;
+      }
+    }
+    @-o-keyframes steamSmall {
+      10% {
+        stroke-dashoffset: 9;
+        opacity: 0.6;
+      }
+      80% {
+        stroke-dashoffset: 27;
+        opacity: 0;
+      }
+      100% {
+        stroke-dashoffset: 27;
+        opacity: 0;
+      }
+    }
+    @keyframes steamSmall {
+      10% {
+        stroke-dashoffset: 9;
+        opacity: 0.6;
+      }
+      80% {
+        stroke-dashoffset: 27;
+        opacity: 0;
+      }
+      100% {
+        stroke-dashoffset: 27;
+        opacity: 0;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<div style="display: table;height:600px;width: 100%;text-align: center;" id="fullpage-loader" class="vcenter-wrapper">
+  <div class="vcenter text-center" style="display:table-cell;text-align: center;vertical-align:middle;width:100%;">
+    <svg class="tea" width="37" height="48" viewBox="0 0 37 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M27.0819 17H3.02508C1.91076 17 1.01376 17.9059 1.0485 19.0197C1.15761 22.5177 1.49703 29.7374 2.5 34C4.07125 40.6778 7.18553 44.8868 8.44856 46.3845C8.79051 46.79 9.29799 47 9.82843 47H20.0218C20.639 47 21.2193 46.7159 21.5659 46.2052C22.6765 44.5687 25.2312 40.4282 27.5 34C28.9757 29.8188 29.084 22.4043 29.0441 18.9156C29.0319 17.8436 28.1539 17 27.0819 17Z" stroke="var(--secondary)" stroke-width="2"></path>
+      <path d="M29 23.5C29 23.5 34.5 20.5 35.5 25.4999C36.0986 28.4926 34.2033 31.5383 32 32.8713C29.4555 34.4108 28 34 28 34" stroke="var(--secondary)" stroke-width="2"></path>
+      <path id="teabag" fill="var(--secondary)" fill-rule="evenodd" clip-rule="evenodd" d="M16 25V17H14V25H12C10.3431 25 9 26.3431 9 28V34C9 35.6569 10.3431 37 12 37H18C19.6569 37 21 35.6569 21 34V28C21 26.3431 19.6569 25 18 25H16ZM11 28C11 27.4477 11.4477 27 12 27H18C18.5523 27 19 27.4477 19 28V34C19 34.5523 18.5523 35 18 35H12C11.4477 35 11 34.5523 11 34V28Z"></path>
+      <path id="steamL" d="M17 1C17 1 17 4.5 14 6.5C11 8.5 11 12 11 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="var(--secondary)"></path>
+      <path id="steamR" d="M21 6C21 6 21 8.22727 19 9.5C17 10.7727 17 13 17 13" stroke="var(--secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </div>
+</div>
+
+<div id="fullpage" class="window" style="display: none">
+  <header class="toolbar toolbar-header draggable">
+    <h1 class="title">Tonuino Manager</h1>
+    <ul class="window-actions action-group">
+      <li class="action-button" data-action="maximize">
+        <span class="icon icon-plus"></span>
+      </li>
+      <li class="action-button" data-action="minimize">
+        <span class="icon icon-minus"></span>
+      </li>
+      <li class="action-button" data-action="close">
+        <span class="icon icon-cancel"></span>
+      </li>
+    </ul>
+
+    <div class="toolbar-actions">
+
+      <div class="btn-group">
+        <button id="device-select" class="btn btn-default btn-dropdown">
+          <span class="icon icon-drive icon-text"></span>
+          <span class="display-value">SD-Karte wählen...</span>
+        </button>
+        <div id="device-dropdown" class="dropdown-content">
+          <div class="pane pane-sm sidebar">
+            <ul class="list-group">
+
+            </ul>
+          </div>
+        </div>
+        <button id="devices-refresh" class="btn btn-default">
+          <span class="icon icon-arrows-ccw fa-spin"></span>
+        </button>
+      </div>
+
+      <button class="btn btn-default" id="btn-purge">
+        <span class="icon icon-feather icon-text"></span>
+        SD-Karte säubern
+      </button>
+
+      <button class="btn btn-default" id="btn-create-new-folder">
+        <span class="icon icon-folder icon-text"></span>
+        <span class="icon-text">Neuer Ordner</span>
+      </button>
+
+
+      <button style="display: none;" class="btn btn-default" id="btn-remove-folder">
+        <span class="icon icon-trash"></span>
+        Ordner löschen
+      </button>
+
+
+
+
+      <button style="display: none;" id="btn-add-files" class="pull-right btn btn-default">
+        <span class="icon icon icon-plus-circled icon-text"></span>
+        Dateien hinzufügen
+      </button>
+
+    </div>
+  </header>
+  <div class="window-content">
+    <div id="main-pane" class="pane-group">
+
+      <div class="pane pane-folder sidebar">
+
+        <ul id="folder-list" class="list-group">
+
+        </ul>
+      </div>
+
+      <div class="pane">
+
+        <table id="track-table" class="table-striped">
+          <thead>
+          <tr>
+            <th style="width: 80px;">Datei</th>
+            <th>Titel</th>
+            <th>Künstler</th>
+            <th style="width: 30px;">Nr.</th>
+          </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+
+    <div style="display: none;" id="main-pane-loader" class="pane-group">
+      <div class="pane">
+
+        <div style="display: table;height:100%;width: 100%;text-align: center;" class="vcenter-wrapper">
+          <div class="vcenter text-center" style="display:table-cell;text-align: center;vertical-align:middle;width:100%;">
+            <svg class="tea" width="37" height="48" viewBox="0 0 37 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M27.0819 17H3.02508C1.91076 17 1.01376 17.9059 1.0485 19.0197C1.15761 22.5177 1.49703 29.7374 2.5 34C4.07125 40.6778 7.18553 44.8868 8.44856 46.3845C8.79051 46.79 9.29799 47 9.82843 47H20.0218C20.639 47 21.2193 46.7159 21.5659 46.2052C22.6765 44.5687 25.2312 40.4282 27.5 34C28.9757 29.8188 29.084 22.4043 29.0441 18.9156C29.0319 17.8436 28.1539 17 27.0819 17Z" stroke="var(--secondary)" stroke-width="2"></path>
+              <path d="M29 23.5C29 23.5 34.5 20.5 35.5 25.4999C36.0986 28.4926 34.2033 31.5383 32 32.8713C29.4555 34.4108 28 34 28 34" stroke="var(--secondary)" stroke-width="2"></path>
+              <path id="teabag" fill="var(--secondary)" fill-rule="evenodd" clip-rule="evenodd" d="M16 25V17H14V25H12C10.3431 25 9 26.3431 9 28V34C9 35.6569 10.3431 37 12 37H18C19.6569 37 21 35.6569 21 34V28C21 26.3431 19.6569 25 18 25H16ZM11 28C11 27.4477 11.4477 27 12 27H18C18.5523 27 19 27.4477 19 28V34C19 34.5523 18.5523 35 18 35H12C11.4477 35 11 34.5523 11 34V28Z"></path>
+              <path id="steamL" d="M17 1C17 1 17 4.5 14 6.5C11 8.5 11 12 11 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="var(--secondary)"></path>
+              <path id="steamR" d="M21 6C21 6 21 8.22727 19 9.5C17 10.7727 17 13 17 13" stroke="var(--secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <p class="text-center status-message"></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <footer class="toolbar toolbar-footer">
+    <h1 class="title"><span id="about-link">Version <span id="app_version"></span> by <i class="i-logo"></i></span></h1>
+  </footer>
+</div>
+<script>
+  setTimeout(() => {
+    document.getElementById('fullpage-loader').style.height = '100%';
+  },1000);
+</script>
+<script>window.$ = window.jQuery = require('jquery');</script>
+<script>require('jquery-ui-dist/jquery-ui');</script>
+<script>
+  require('./frontend/start');
+</script>
+
+</body>
+</html>
