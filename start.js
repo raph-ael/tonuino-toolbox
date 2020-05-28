@@ -1,5 +1,5 @@
 const path = require('path');
-const { app, BrowserWindow, ipcMain, protocol, dialog } = require('electron');
+const { app, BrowserWindow, ipcMain, protocol, dialog, globalShortcut } = require('electron');
 const { autoUpdater } = require('electron-updater');
 const log = require('electron-log');
 
@@ -46,8 +46,9 @@ const createWindow = () => {
     height: 600,
     frame: false,
     webPreferences: { nodeIntegration: true },
-    show: true,
-    hasShadow: true
+    show: false,
+    hasShadow: true,
+    devTools: false
   });
 
   // and load the index.html of the app.
@@ -199,6 +200,10 @@ app.on('ready', () => {
   createWindow();
   createWindowDialog();
   initAutoUpdater();
+
+  globalShortcut.register('Control+Shift+I', () => {
+    return false;
+  });
 });
 
 // Quit when all windows are closed.
