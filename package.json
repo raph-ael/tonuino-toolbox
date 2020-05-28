@@ -1,12 +1,12 @@
 {
   "name": "tonuino-toolbox",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Organisiere Deine Tonuino SD-Karte ohne Stress :)",
   "main": "start.js",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder build --linux --win --publish never",
-    "deploy": "electron-builder build --win --publish always",
+    "deploy": "electron-builder build --linux --win --publish always",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Raphael Wintrich <raphael@geldfrei.net>",
