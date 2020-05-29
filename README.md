@@ -1,4 +1,4 @@
-# Tonuino-Toolkit
+# Tonuino-Toolbox ![icon](icon-42x42.png?raw=true "Icon")
 
 Organisiere Deine Tonuino SD-Karte ohne Stress :)
 
