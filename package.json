@@ -6,6 +6,7 @@
   "scripts": {
     "start": "electron .",
     "build": "electron-builder build --linux --win --publish never",
+    "build-mac": "electron-builder build --mac --publish never",
     "deploy": "electron-builder build --linux --win --publish always",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
