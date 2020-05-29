@@ -6,19 +6,19 @@ Organisiere Deine Tonuino SD-Karte ohne Stress :)
 
 Um das Tonuino-Toolkit zu benutzen, lade Dir einfach die entsprechende Installationsdatei für Dein Betriebssystem unter [Releases](https://github.com/raph-ael/tonuino-toolbox/releases) herunter.
 
-### Windows 64bit
+#### Windows 64bit
 
 [tonuino-toolbox-1.1.6-win.exe](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.6/tonuino-toolbox-1.1.6-win.exe)
 
-### Ubuntu/Debian Linux
+#### Ubuntu/Debian Linux
 
 [tonuino-toolbox-1.1.6-linux-amd64.deb](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.6/tonuino-toolbox-1.1.6-linux-amd64.deb)
 
-### CentOS Suse Fedora rpm Linux Package
+#### CentOS Suse Fedora rpm Linux Package
 
 [tonuino-toolbox-1.1.6-linux-x86_64.rpm](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.6/tonuino-toolbox-1.1.6-linux-x86_64.rpm)
 
-### AppImage
+#### AppImage
 
 [tonuino-toolbox-1.1.6-linux-x86_64.AppImage](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.6/tonuino-toolbox-1.1.6-linux-x86_64.AppImage)
 
