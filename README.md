@@ -8,19 +8,19 @@ Um das Tonuino-Toolkit zu benutzen, lade Dir einfach die entsprechende Installat
 
 ### Windows 64bit
 
-https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.5/tonuino-toolbox-1.1.5-win.exe
+[tonuino-toolbox-1.1.6-win.exe](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.6/tonuino-toolbox-1.1.6-win.exe)
 
 ### Ubuntu/Debian Linux
 
-https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.5/tonuino-toolbox-1.1.5-linux-amd64.deb
+[tonuino-toolbox-1.1.6-linux-amd64.deb](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.6/tonuino-toolbox-1.1.6-linux-amd64.deb)
 
 ### CentOS Suse Fedora rpm Linux Package
 
-https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.5/tonuino-toolbox-1.1.5-linux-x86_64.rpm
+[tonuino-toolbox-1.1.6-linux-x86_64.rpm](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.6/tonuino-toolbox-1.1.6-linux-x86_64.rpm)
 
 ### AppImage
 
-https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.5/tonuino-toolbox-1.1.5-linux-x86_64.AppImage
+[tonuino-toolbox-1.1.6-linux-x86_64.AppImage](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.6/tonuino-toolbox-1.1.6-linux-x86_64.AppImage)
 
 ## Development
 
