@@ -28,6 +28,7 @@
     "jquery-toast-plugin": "^1.3.2",
     "jquery-ui-dist": "^1.12.1",
     "musicmetadata": "^2.0.5",
+    "node-df": "^0.1.4",
     "node-disk-info": "^1.0.4",
     "rimraf": "^3.0.2",
     "tmp": "^0.2.1"

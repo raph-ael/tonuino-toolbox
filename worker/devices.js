@@ -4,6 +4,10 @@ const helper = require ("../helper");
 const fs = require('fs');
 const filesystem = require("./filesystem");
 const { ipcRenderer } = require('electron');
+const df = require('node-df');
+const util = require('util');
+
+const dfp = util.promisify(df);
 
 let devices = {
 
@@ -11,9 +15,49 @@ let devices = {
 
     list: async (callback) => {
 
-        const drives = await nodeDiskInfo.getDiskInfoSync();
+        if(helper.isWindows()) {
+
+            return await devices.listWindows();
+        }
+        else {
+            return await devices.listWinMac();
+        }
+
+    },
+
+    listWinMac: async () => {
+
+        let drives = await dfp();
 
         console.log(drives);
+
+        let out = [];
+
+        await helper.asyncForEach(drives, async (drive) => {
+            if(drive.size > 1065483 && drive.filesystem.indexOf('udev') === -1 && drive.filesystem.indexOf('tmpfs') === -1) {
+
+                let faktor = 1024;
+
+                out.push({
+                    name: drive.filesystem,
+                    path: drive.mount,
+                    size: drive.size*faktor,
+                    free: drive.available*faktor,
+                    busy: drive.used*faktor,
+                    size_format: helper.bytesToSize(drive.size*faktor),
+                    free_format: helper.bytesToSize(drive.available*faktor),
+                    busy_format: helper.bytesToSize(drive.used*faktor)
+                });
+
+            }
+        });
+
+        return out;
+
+    },
+
+    listWindows: async () => {
+        const drives = await nodeDiskInfo.getDiskInfoSync();
 
         let out = [];
 
