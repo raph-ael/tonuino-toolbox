@@ -30,6 +30,13 @@ const helper = {
             return true;
         }
         return false;
+    },
+
+    isMac: () => {
+        if(process.platform === 'darwin') {
+            return true;
+        }
+        return false;
     }
 };
 

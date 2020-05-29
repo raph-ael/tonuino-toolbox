@@ -9,6 +9,9 @@
     "deploy": "electron-builder build --linux --win --publish always",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "build": {
+    "appId": "net.geldfrei.tonunino"
+  },
   "author": "Raphael Wintrich <raphael@geldfrei.net>",
   "license": "ISC",
   "devDependencies": {

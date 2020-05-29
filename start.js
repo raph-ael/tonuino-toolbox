@@ -200,10 +200,12 @@ app.on('ready', () => {
   createWindow();
   createWindowDialog();
   initAutoUpdater();
-
+/*
   globalShortcut.register('Control+Shift+I', () => {
     return false;
   });
+  */
+
 });
 
 // Quit when all windows are closed.

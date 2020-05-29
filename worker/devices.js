@@ -31,6 +31,9 @@ let devices = {
                     faktor = 1;
                     name += '/';
                 }
+                else if(helper.isMac()) {
+                    faktor = 512;
+                }
 
                 out.push({
                     name: name,

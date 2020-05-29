@@ -1,0 +1,47 @@
+appId: net.geldfrei.tonunino
+
+publish:
+  provider: github
+  token:
+
+linux:
+  artifactName: ${name}-${version}-${os}-${arch}.${ext}
+  category: Development
+  icon: icon.icns
+  target:
+    - target: AppImage
+      arch:
+        - x64
+    - target: tar.gz
+      arch:
+        - x64
+    - target: deb
+      arch:
+        - x64
+    - target: rpm
+      arch:
+        - x64
+
+win:
+  artifactName: ${name}-${version}-${os}-${arch}.${ext}
+  icon: icon.ico
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: zip
+      arch:
+        - x64
+
+nsis:
+  oneClick: false
+  perMachine: true
+  allowToChangeInstallationDirectory: true
+
+mac:
+  icon: icon.icns
+  category: public.app-category.developer-tools
+  target:
+    - target: dmg
+      arch:
+        - x64

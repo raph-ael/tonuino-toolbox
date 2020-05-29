@@ -6,28 +6,28 @@
 </head>
 <body>
 
-
-<header class="toolbar toolbar-header">
-    <h1 class="title" id="title">Titel</h1>
-</header>
-<div class="window-content" style="min-height: 183px;">
-    <div class="pane padded-more">
-        <p><strong id="message"></strong></p>
-        <p id="detail"></p>
+<div class="window">
+    <header class="toolbar toolbar-header">
+        <h1 class="title" id="title">Titel</h1>
+    </header>
+    <div class="window-content">
+        <div class="pane padded-more">
+            <p><strong id="message"></strong></p>
+            <p id="detail"></p>
+        </div>
     </div>
+    <footer class="toolbar toolbar-footer">
+        <div class="toolbar-actions">
+            <button data-answer="1" id="button_0" style="display: none" class="btn btn-default">
+                Button_01
+            </button>
+
+            <button data-answer="2" id="button_1" style="display: none" class="btn btn-primary pull-right">
+                Button_02
+            </button>
+        </div>
+    </footer>
 </div>
-<footer class="toolbar toolbar-footer">
-    <div class="toolbar-actions">
-        <button data-answer="1" id="button_0" style="display: none" class="btn btn-default">
-            Button_01
-        </button>
-
-        <button data-answer="2" id="button_1" style="display: none" class="btn btn-primary pull-right">
-            Button_02
-        </button>
-    </div>
-</footer>
-
 <script>window.$ = window.jQuery = require('jquery');</script>
 <script>require('jquery-ui-dist/jquery-ui');</script>
 <script>require('./dialog');</script>
