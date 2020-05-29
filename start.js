@@ -42,7 +42,7 @@ const registerProtocols = () => {
 const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
+    width: 900,
     height: 600,
     frame: false,
     webPreferences: { nodeIntegration: true },
