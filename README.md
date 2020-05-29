@@ -2,6 +2,8 @@
 
 Organisiere Deine Tonuino SD-Karte ohne Stress :)
 
+![Vorschau](preview.png?raw=true "Vorschau")
+
 ## Installation
 
 Um das Tonuino-Toolkit zu benutzen, lade Dir einfach die entsprechende Installationsdatei für Dein Betriebssystem unter [Releases](https://github.com/raph-ael/tonuino-toolbox/releases) herunter.
