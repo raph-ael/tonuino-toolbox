@@ -12,6 +12,10 @@ Um die Tonuino-Toolbox zu benutzen, lade Dir einfach die entsprechende Installat
 
 [tonuino-toolbox-1.1.6-win.exe](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.6/tonuino-toolbox-1.1.6-win.exe)
 
+#### Mac OS
+
+[tonuino-toolbox-1.1.6.dmg](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.6/tonuino-toolbox-1.1.6.dmg)
+
 #### Ubuntu/Debian Linux
 
 [tonuino-toolbox-1.1.6-linux-amd64.deb](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.6/tonuino-toolbox-1.1.6-linux-amd64.deb)
