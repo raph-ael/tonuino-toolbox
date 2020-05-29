@@ -62,13 +62,13 @@ const createWindow = () => {
   //mainWindow.webContents.openDevTools();
 
   workerWindow = new BrowserWindow({
-    show: true,
+    show: false,
     width: 800,
     height: 600,
     webPreferences: { nodeIntegration: true }
   });
 
-  workerWindow.webContents.openDevTools();
+  //workerWindow.webContents.openDevTools();
 
   workerWindow.loadFile('worker.html');
 
