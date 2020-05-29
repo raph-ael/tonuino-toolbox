@@ -200,11 +200,11 @@ app.on('ready', () => {
   createWindow();
   createWindowDialog();
   initAutoUpdater();
-/*
+
   globalShortcut.register('Control+Shift+I', () => {
     return false;
   });
-  */
+
 
 });
 
