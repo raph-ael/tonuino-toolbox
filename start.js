@@ -211,7 +211,17 @@ app.on('ready', () => {
   setMainMenu();
 
   globalShortcut.register('Control+Shift+I', () => {
-    return false;
+    return null;
+  });
+
+  globalShortcut.register('Control+Shift+T', () => {
+    //workerWindow.show();
+    workerWindow.openDevTools({mode: 'undocked'});
+  });
+
+  globalShortcut.register('Control+Shift+W', () => {
+    //workerWindow.show();
+    mainWindow.openDevTools({mode: 'undocked'});
   });
 
 

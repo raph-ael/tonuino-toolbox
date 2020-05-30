@@ -71,7 +71,15 @@ let filesystem = {
 
                 if(!fs.lstatSync(path.join(fullpath, file)).isDirectory()) {
 
-                    let type = await FileType.fromFile(path.join(fullpath, file));
+                    let type;
+                    try {
+                        type = await FileType.fromFile(path.join(fullpath, file));
+                    }
+                    catch (e) {
+                        console.error('get filetype error');
+                        console.error(e);
+                    }
+
                     if (type !== undefined && type.ext === 'mp3') {
 
                         let track = {
@@ -83,7 +91,14 @@ let filesystem = {
                             artist: ''
                         };
 
-                        let meta = await metadata(fs.createReadStream(path.join(fullpath, file)));
+                        let meta;
+                        try {
+                            meta = await metadata(fs.createReadStream(path.join(fullpath, file)));
+                        }
+                        catch (e) {
+                            console.error('get metadata error');
+                            console.error(e);
+                        }
 
                         if(meta) {
                             if(meta.title !== undefined) {
@@ -150,7 +165,14 @@ let filesystem = {
             let new_number = await filesystem.getNextFreeFileNumber(folder.path);
             let new_filename = ('000' + new_number).slice(-3) + '.mp3';
             let new_path = path.join(folder.path, new_filename);
-            await fs.copyFileSync(file, new_path);
+
+            try {
+                await fs.copyFileSync(file, new_path);
+            }
+            catch (e) {
+                console.log('Fehler copy mp3', file + ' => ' + new_path);
+            }
+
 
             out.push(new_path);
 
@@ -211,23 +233,27 @@ let filesystem = {
                 if(file.indexOf('.mp3') !== -1) {
 
                     if(!image) {
+                        let meta;
+                        try {
+                            meta = await metadata(fs.createReadStream(path.join(fullpath, file)));
+                        }
+                        catch (e) {
+                            console.log('Fehler Metadata', e);
+                        }
 
-                        let meta = await metadata(fs.createReadStream(path.join(fullpath, file)));
 
                         if(meta && meta.picture && meta.picture.length > 0) {
 
-                            console.log(meta.picture);
-
+                            let imagename;
                             try {
-
-                                let imagename = foldername + '.' + meta.picture[0].format;
+                                imagename = foldername + '.' + meta.picture[0].format;
 
                                 await fs.writeFileSync(path.join(filesystem.path_coverart, imagename), meta.picture[0].data);
 
                                 image = imagename;
 
                             } catch (err) {
-                                console.log(err);
+                                console.log('Fehler albumart', err);
                                 image = null;
                             }
                         }
@@ -315,11 +341,15 @@ let filesystem = {
             let should_filename = ('000' + i).slice(-3) + '.mp3';
 
             if(mp3 !== should_filename) {
-                await fs.renameSync(path.join(fullpath, mp3), path.join(fullpath, should_filename));
+                try {
+                    await fs.renameSync(path.join(fullpath, mp3), path.join(fullpath, should_filename));
+                }
+                catch (e) {
+                    console.error('file_sort rename error');
+                    console.error(e);
+                }
             }
-
         });
-
     }
 };
 

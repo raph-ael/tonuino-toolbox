@@ -15,6 +15,7 @@
   "author": "Raphael Wintrich <raphael@geldfrei.net>",
   "license": "ISC",
   "devDependencies": {
+    "devtron": "^1.4.0",
     "electron": "^8.3.0",
     "electron-builder": "^22.7.0",
     "electron-rebuild": "^1.11.0"
