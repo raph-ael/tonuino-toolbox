@@ -69,7 +69,7 @@ const template = [
             },
             { type: 'separator' },
             {
-                label: 'Über uns',
+                label: 'About',
                 click: async () => {
 
                     await shell.openExternal('https://geldfrei.net');

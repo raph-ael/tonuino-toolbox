@@ -59,8 +59,6 @@ const createWindow = () => {
     devTools: false
   });
 
-  mainWindow.setAppl
-
   // and load the index.html of the app.
   mainWindow.loadFile('index.html');
 
