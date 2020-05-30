@@ -1,7 +1,8 @@
 const path = require('path');
-const { app, BrowserWindow, ipcMain, protocol, dialog, globalShortcut } = require('electron');
+const { app, BrowserWindow, ipcMain, protocol, dialog, globalShortcut, Menu } = require('electron');
 const { autoUpdater } = require('electron-updater');
 const log = require('electron-log');
+const template = require('./menu');
 
 let mainWindow, dialogWindow, workerWindow;
 
@@ -39,6 +40,13 @@ const registerProtocols = () => {
 
 };
 
+const setMainMenu = () => {
+
+  const menu = Menu.buildFromTemplate(template);
+  Menu.setApplicationMenu(menu)
+
+};
+
 const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
@@ -50,6 +58,8 @@ const createWindow = () => {
     hasShadow: true,
     devTools: false
   });
+
+  mainWindow.setAppl
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html');
@@ -200,6 +210,7 @@ app.on('ready', () => {
   createWindow();
   createWindowDialog();
   initAutoUpdater();
+  setMainMenu();
 
   globalShortcut.register('Control+Shift+I', () => {
     return false;
