@@ -54,7 +54,7 @@ npm start
 
 ## Authors
 
-* [Raphael Wintrich](https://github.com/raph-ael) - initial Work
+* [Raphael Wintrich](https://github.com/raph-ael) ([geldfrei.net](https://geldfrei.net)) - initial Work
 
 ## License
 
