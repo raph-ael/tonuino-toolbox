@@ -4,7 +4,7 @@ const { shell } = require('electron');
 const template = [
     // { role: 'appMenu' }
     ...(isMac ? [{
-        label: app.name,
+        label: 'Tonunino-Toolbox',
         submenu: [
             { role: 'services' },
             { type: 'separator' },
