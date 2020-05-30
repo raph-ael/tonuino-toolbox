@@ -101,6 +101,7 @@ let filesystem = {
                         }
 
                         if(meta) {
+                            console.log(meta.title);
                             if(meta.title !== undefined) {
                                 track.name = meta.title;
                             }

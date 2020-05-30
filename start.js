@@ -50,8 +50,8 @@ const setMainMenu = () => {
 const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 900,
-    height: 600,
+    width: 1024,
+    height: 700,
     frame: false,
     webPreferences: { nodeIntegration: true },
     show: false,
