@@ -1,12 +1,14 @@
 {
   "name": "tonuino-toolbox",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Organisiere Deine Tonuino SD-Karte ohne Stress :)",
   "main": "start.js",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder build --linux --win --publish never",
     "build-mac": "electron-builder build --mac --publish never",
+    "build-linux": "electron-builder build --linux --publish never",
+    "build-win": "electron-builder build --win --publish never",
     "deploy": "electron-builder build --linux --win --publish always",
     "deploy-mac": "electron-builder build --mac --publish always",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,12 +16,14 @@
   "author": "Raphael Wintrich <raphael@geldfrei.net>",
   "license": "ISC",
   "devDependencies": {
+    "devtron": "^1.4.0",
     "electron": "^8.3.0",
     "electron-builder": "^22.7.0",
     "electron-rebuild": "^1.11.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
+    "datatables": "^1.10.18",
     "electron-log": "^4.2.0",
     "electron-squirrel-startup": "^1.0.0",
     "electron-updater": "^4.3.1",
@@ -31,6 +35,7 @@
     "musicmetadata": "^2.0.5",
     "node-df": "^0.1.4",
     "node-disk-info": "^1.0.4",
+    "node-id3": "^0.1.16",
     "rimraf": "^3.0.2",
     "tmp": "^0.2.1"
   },

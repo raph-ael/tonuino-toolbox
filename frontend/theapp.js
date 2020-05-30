@@ -175,6 +175,24 @@ let theapp = {
         });
     },
 
+    updateFileProperty: (file_path, tag_data) =>{
+
+        theapp.folder.title.forEach((file) => {
+            if(file.path === file_path) {
+                console.log('update data!!');
+                console.log(tag_data);
+                console.log(file);
+
+                file.track = tag_data.trackNumber;
+                file.name = tag_data.title;
+                file.album = tag_data.album;
+                file.artist = tag_data.artist;
+
+            }
+        });
+
+    },
+
     setFolder: (folder) => {
         theapp.folder = folder;
         track_table.setFolder(folder);

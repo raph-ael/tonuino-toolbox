@@ -50,8 +50,8 @@ const setMainMenu = () => {
 const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 900,
-    height: 600,
+    width: 1024,
+    height: 700,
     frame: false,
     webPreferences: { nodeIntegration: true },
     show: false,
@@ -211,7 +211,17 @@ app.on('ready', () => {
   setMainMenu();
 
   globalShortcut.register('Control+Shift+I', () => {
-    return false;
+    return null;
+  });
+
+  globalShortcut.register('Control+Shift+T', () => {
+    //workerWindow.show();
+    workerWindow.openDevTools({mode: 'undocked'});
+  });
+
+  globalShortcut.register('Control+Shift+W', () => {
+    //workerWindow.show();
+    mainWindow.openDevTools({mode: 'undocked'});
   });
 
 

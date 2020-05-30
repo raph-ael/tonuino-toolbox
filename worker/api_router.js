@@ -3,6 +3,7 @@ const electron = require('electron');
 const { ipcRenderer } = require('electron');
 const devices = require("./devices");
 const path = require('path');
+const mp3_id3_editor = require('./mp3_id3_editor');
 
 let api_router = {
 
@@ -87,6 +88,14 @@ let api_router = {
         await filesystem.removeAll(path.join(params.drive.path, params.folder.folder_name));
 
         callback(true);
+
+    },
+
+    tag_edit: async (params, callback) => {
+
+        console.log(params);
+        let success = await mp3_id3_editor.updateTag(params.file_path, params.tag_name, params.value);
+        callback(success);
 
     }
 
