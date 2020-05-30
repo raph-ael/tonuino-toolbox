@@ -17,7 +17,7 @@ const template = [
     }] : []),
     // { role: 'fileMenu' }
     {
-        label: 'File',
+        label: 'Datei',
         submenu: [
             isMac ? { role: 'close' } : { role: 'quit' }
         ]
@@ -25,7 +25,7 @@ const template = [
     // { role: 'editMenu' }
     // { role: 'viewMenu' }
     {
-        label: 'View',
+        label: 'Ansicht',
         submenu: [
             { role: 'resetzoom' },
             { role: 'zoomin' },
@@ -36,7 +36,7 @@ const template = [
     },
     // { role: 'windowMenu' }
     {
-        label: 'Window',
+        label: 'Fenster',
         submenu: [
             { role: 'minimize' },
             { role: 'zoom' },
@@ -54,14 +54,22 @@ const template = [
         role: 'help',
         submenu: [
             {
-                label: 'issues',
+                label: 'Repo',
                 click: async () => {
 
                     await shell.openExternal('https://github.com/raph-ael/tonuino-toolbox/issues');
                 }
             },
             {
-                label: 'about',
+                label: 'Problem / Bug melden',
+                click: async () => {
+
+                    await shell.openExternal('https://github.com/raph-ael/tonuino-toolbox/issues');
+                }
+            },
+            { type: 'separator' },
+            {
+                label: 'Über uns',
                 click: async () => {
 
                     await shell.openExternal('https://geldfrei.net');
