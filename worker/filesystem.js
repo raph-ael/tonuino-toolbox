@@ -281,35 +281,33 @@ let filesystem = {
 
             files.sort();
 
-            let highest_folder_number = 0;
+            let next_free_folder_number = 0;
+            let next_free_folder_name = '01';
 
-            await helper.asyncForEach(files, async (file) => {
+            for(let i=1;i<100;i++) {
 
-                if(fs.lstatSync(path.join(fullpath, file)).isDirectory()) {
-
-                    if (file.length === 2) {
-                        let number = parseInt(file);
-                        if (highest_folder_number < number) {
-                            highest_folder_number = number;
-                        }
-                    }
+                /*
+                 * wenn Ordner nicht existiert erstellen und schleife abbrechen
+                 */
+                next_free_folder_name = ('00'+i).slice(-2);
+                if(files.indexOf(next_free_folder_name) === -1) {
+                    next_free_folder_number = i;
+                    i=101;
                 }
-            });
 
-            let new_number = (highest_folder_number+1);
-            let new_folder_name = ('00' + new_number).slice(-2);
+            }
 
-            await fs.mkdirSync(path.join(fullpath, new_folder_name));
+            await fs.mkdirSync(path.join(fullpath, next_free_folder_name));
 
             let folder = {
-                name: new_folder_name,
+                name: next_free_folder_name,
                 artists: [],
                 albums: [],
-                folder_name: new_folder_name,
+                folder_name: next_free_folder_name,
                 title: [],
                 type: 'other',
                 filetype: null,
-                path: path.join(fullpath, new_folder_name),
+                path: path.join(fullpath, next_free_folder_name),
                 image: null
             };
 

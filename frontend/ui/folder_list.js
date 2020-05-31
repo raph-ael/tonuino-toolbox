@@ -57,7 +57,7 @@ let folder_list = {
         }
 
         let $li = $(`
-            <li class="list-group-item list-folder-tonuino list-folder-tonuino-` + folder.folder_name + `">
+            <li data-number="` + parseInt(folder.folder_name) + `" class="list-group-item list-folder-tonuino list-folder-tonuino-` + folder.folder_name + `">
             <img class="media-object pull-left" src="` + image_src + `" width="52" height="52">
             <div class="media-body">
               <strong>` + folder.folder_name + `</strong> <span class="pull-right">` + folder.title.length + ` Titel</span>
@@ -103,8 +103,9 @@ let folder_list = {
 
     addFolder: (folder, type) => {
         console.log(folder);
+        let new_number = parseInt(folder.folder_name);
         if(folder_list.$list.find('.list-folder-tonuino').length > 0) {
-            folder_list.$list.find('.list-folder-tonuino').last().after(folder_list.renderTonuinoFolder(folder));
+            folder_list.$list.find('[data-number="' + (new_number-1) + '"]').after(folder_list.renderTonuinoFolder(folder));
         }
         else {
             folder_list.$list.find('.title').first().after(folder_list.renderTonuinoFolder(folder));

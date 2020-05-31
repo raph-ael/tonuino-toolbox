@@ -11,7 +11,7 @@ const dfp = util.promisify(df);
 
 let devices = {
 
-    tonuino_system_folders: ['mp3'],
+    tonuino_system_folders: ['mp3', 'advert'],
 
     list: async (callback) => {
 
@@ -187,7 +187,7 @@ let devices = {
 
         let files = await filesystem.list(drive.path);
 
-        let allowed = ['mp3'];
+        let allowed = ['mp3', 'advert'];
 
         for(let i=1;i<=99;i++) {
             allowed.push(('00'+i).slice(-2))
