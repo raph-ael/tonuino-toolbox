@@ -10,6 +10,7 @@
     "build-linux": "electron-builder build --linux --publish never",
     "build-win": "electron-builder build --win --publish never",
     "deploy": "electron-builder build --linux --win --publish always",
+    "deploy-mac": "electron-builder build --mac --publish always",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Raphael Wintrich <raphael@geldfrei.net>",
