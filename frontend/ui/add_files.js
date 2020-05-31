@@ -1,4 +1,5 @@
 const { ipcRenderer } = require('electron');
+const logger = require('../../logger');
 
 let add_files = {
 
@@ -46,7 +47,7 @@ let add_files = {
                 },
                 success: (response) => {
 
-                    console.log(response);
+                    logger.log(response);
                     theapp.setMp3sForFolder(response.folder.title);
                     theapp.setFolder(response.folder);
                     folder_list.replaceFolder(response.folder);

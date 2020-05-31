@@ -1,3 +1,5 @@
+const logger = require('../../logger');
+
 let dropdowns = {
 
     $buttons: null,
@@ -17,7 +19,7 @@ let dropdowns = {
 
         dropdowns.$buttons.click((ev) => {
 
-            console.log('select clicked');
+            logger.log('select clicked');
             let $btn = $(ev.currentTarget);
             let $dropdown = $btn.next('.dropdown-content');
 

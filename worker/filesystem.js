@@ -7,9 +7,9 @@ const mm = require('musicmetadata');
 const { ipcRenderer } = require('electron');
 const electron = require('electron');
 const rimraf = require('rimraf');
+const logger = require('../logger');
 
 const readdir = util.promisify(fs.readdir);
-
 const metadata = util.promisify(mm);
 
 let filesystem = {
@@ -33,10 +33,10 @@ let filesystem = {
         try {
             files = await readdir(fullpath);
         } catch (err) {
-            console.log(err);
+            logger.log(err);
         }
         if (files === undefined) {
-            console.log('undefined');
+            logger.log('undefined');
         } else {
             files.sort();
 
@@ -61,10 +61,10 @@ let filesystem = {
         try {
             files = await readdir(fullpath);
         } catch (err) {
-            console.log(err);
+            logger.log(err);
         }
         if (files === undefined) {
-            console.log('undefined');
+            logger.log('undefined');
         } else {
             files.sort();
             await helper.asyncForEach(files, async (file) => {
@@ -76,8 +76,8 @@ let filesystem = {
                         type = await FileType.fromFile(path.join(fullpath, file));
                     }
                     catch (e) {
-                        console.error('get filetype error');
-                        console.error(e);
+                        logger.error('get filetype error');
+                        logger.error(e);
                     }
 
                     if (type !== undefined && type.ext === 'mp3') {
@@ -96,12 +96,12 @@ let filesystem = {
                             meta = await metadata(fs.createReadStream(path.join(fullpath, file)));
                         }
                         catch (e) {
-                            console.error('get metadata error');
-                            console.error(e);
+                            logger.error('get metadata error');
+                            logger.error(e);
                         }
 
                         if(meta) {
-                            console.log(meta.title);
+                            logger.log(meta.title);
                             if(meta.title !== undefined) {
                                 track.name = meta.title;
                             }
@@ -171,7 +171,7 @@ let filesystem = {
                 await fs.copyFileSync(file, new_path);
             }
             catch (e) {
-                console.log('Fehler copy mp3', file + ' => ' + new_path);
+                logger.log('Fehler copy mp3', file + ' => ' + new_path);
             }
 
 
@@ -189,10 +189,10 @@ let filesystem = {
         try {
             files = await readdir(path);
         } catch (err) {
-            console.log(err);
+            logger.log(err);
         }
         if (files === undefined) {
-            console.log('undefined');
+            logger.log('undefined');
         } else {
 
             files.sort();
@@ -220,10 +220,10 @@ let filesystem = {
         try {
             files = await readdir(fullpath);
         } catch (err) {
-            console.log(err);
+            logger.log(err);
         }
         if (files === undefined) {
-            console.log('undefined');
+            logger.log('undefined');
         } else {
 
             files.sort();
@@ -239,7 +239,7 @@ let filesystem = {
                             meta = await metadata(fs.createReadStream(path.join(fullpath, file)));
                         }
                         catch (e) {
-                            console.log('Fehler Metadata', e);
+                            logger.log('Fehler Metadata', e);
                         }
 
 
@@ -254,7 +254,7 @@ let filesystem = {
                                 image = imagename;
 
                             } catch (err) {
-                                console.log('Fehler albumart', err);
+                                logger.log('Fehler albumart', err);
                                 image = null;
                             }
                         }
@@ -273,10 +273,10 @@ let filesystem = {
         try {
             files = await readdir(fullpath);
         } catch (err) {
-            console.log(err);
+            logger.log(err);
         }
         if (files === undefined) {
-            console.log('undefined');
+            logger.log('undefined');
         } else {
 
             files.sort();
@@ -344,8 +344,8 @@ let filesystem = {
                     await fs.renameSync(path.join(fullpath, mp3), path.join(fullpath, should_filename));
                 }
                 catch (e) {
-                    console.error('file_sort rename error');
-                    console.error(e);
+                    logger.error('file_sort rename error');
+                    logger.error(e);
                 }
             }
         });

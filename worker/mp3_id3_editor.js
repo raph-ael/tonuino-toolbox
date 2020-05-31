@@ -4,7 +4,7 @@ const util = require('util');
 const path = require('path');
 const fs = require('fs');
 const metadata = util.promisify(mm);
-
+const logger = require('../logger');
 
 const mp3_id3_editor = {
 
@@ -26,16 +26,16 @@ const mp3_id3_editor = {
         let values = {};
         values[tag] = value;
 
-        console.log('update tag');
-        console.log(tag, value);
+        logger.log('update tag');
+        logger.log(tag, value);
 
         try {
             await NodeID3.update(values, file_path);
             return tag_data;
         }
         catch (e) {
-            console.error('update tag error');
-            console.error(e);
+            logger.error('update tag error');
+            logger.error(e);
         }
 
         return false;
@@ -71,8 +71,8 @@ const mp3_id3_editor = {
 
         }
         catch (e) {
-            console.error('get meta error');
-            console.error(e);
+            logger.error('get meta error');
+            logger.error(e);
         }
 
         /*
@@ -85,8 +85,8 @@ const mp3_id3_editor = {
                 await NodeID3.write(tags, file_path);
             }
             catch (e) {
-                console.error('tag create error');
-                console.error(e);
+                logger.error('tag create error');
+                logger.error(e);
             }
         }
 

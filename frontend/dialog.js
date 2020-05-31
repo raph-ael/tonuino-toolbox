@@ -1,4 +1,5 @@
 const { ipcRenderer } = require('electron');
+const logger = require('../logger');
 
 let dialog = {
 
@@ -8,7 +9,7 @@ let dialog = {
 
         ipcRenderer.on('answer-from-dialog', (event, arg) => {
 
-            console.log(dialog.callback);
+            logger.log(dialog.callback);
             if(dialog.callback) {
                 dialog.callback(arg);
                 dialog.callback = null;

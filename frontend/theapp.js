@@ -1,5 +1,6 @@
 const { ipcRenderer } = require('electron');
 const electron = require('electron');
+const logger = require('../logger');
 
 let theapp = {
 
@@ -181,9 +182,9 @@ let theapp = {
 
         theapp.folder.title.forEach((file) => {
             if(file.path === file_path) {
-                console.log('update data!!');
-                console.log(tag_data);
-                console.log(file);
+                logger.log('update data!!');
+                logger.log(tag_data);
+                logger.log(file);
 
                 file.track = tag_data.trackNumber;
                 file.name = tag_data.title;

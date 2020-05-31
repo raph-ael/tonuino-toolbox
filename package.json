@@ -36,6 +36,7 @@
     "node-df": "^0.1.4",
     "node-disk-info": "^1.0.4",
     "node-id3": "^0.1.16",
+    "pretty-logger": "^0.1.2",
     "rimraf": "^3.0.2",
     "tmp": "^0.2.1"
   },

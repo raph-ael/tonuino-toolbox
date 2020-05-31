@@ -1,3 +1,5 @@
+const logger = require('../../logger');
+
 let folder_list = {
 
     $list: null,
@@ -102,7 +104,8 @@ let folder_list = {
     },
 
     addFolder: (folder, type) => {
-        console.log(folder);
+        logger.log(folder);
+
         let new_number = parseInt(folder.folder_name);
         if(folder_list.$list.find('.list-folder-tonuino').length > 0) {
             folder_list.$list.find('[data-number="' + (new_number-1) + '"]').after(folder_list.renderTonuinoFolder(folder));

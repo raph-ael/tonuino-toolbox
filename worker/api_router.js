@@ -4,6 +4,7 @@ const { ipcRenderer } = require('electron');
 const devices = require("./devices");
 const path = require('path');
 const mp3_id3_editor = require('./mp3_id3_editor');
+const logger = require('../logger');
 
 let api_router = {
 
@@ -93,7 +94,7 @@ let api_router = {
 
     tag_edit: async (params, callback) => {
 
-        console.log(params);
+        logger.log(params);
         let success = await mp3_id3_editor.updateTag(params.file_path, params.tag_name, params.value);
         callback(success);
 

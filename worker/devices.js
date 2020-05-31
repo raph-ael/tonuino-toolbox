@@ -6,6 +6,7 @@ const filesystem = require("./filesystem");
 const { ipcRenderer } = require('electron');
 const df = require('node-df');
 const util = require('util');
+const logger = require('../logger');
 
 const dfp = util.promisify(df);
 
@@ -29,7 +30,7 @@ let devices = {
 
         let drives = await dfp();
 
-        console.log(drives);
+        logger.log(drives);
 
         let out = [];
 
