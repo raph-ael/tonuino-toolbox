@@ -107,11 +107,13 @@ let theapp = {
         /*
          * init device selector
          */
+        theapp.showMainLoader();
+        theapp.hideFullpageLoader();
         device_select.init(() => {
             /*
              * autodetect sdcard
              */
-            theapp.hideFullpageLoader();
+            theapp.hideMainLoader();
         });
 
         /*
