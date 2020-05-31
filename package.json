@@ -1,6 +1,6 @@
 {
   "name": "tonuino-toolbox",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "Organisiere Deine Tonuino SD-Karte ohne Stress :)",
   "main": "start.js",
   "scripts": {

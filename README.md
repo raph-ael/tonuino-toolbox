@@ -10,23 +10,23 @@ Um die Tonuino-Toolbox zu benutzen, lade Dir einfach die entsprechende Installat
 
 #### Windows 64bit
 
-[tonuino-toolbox-1.1.7-win.exe](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.7/tonuino-toolbox-1.1.7-win.exe)
+[tonuino-toolbox-1.1.8-win.exe](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.8/tonuino-toolbox-1.1.8-win.exe)
 
 #### Mac OS
 
-[tonuino-toolbox-1.1.7.dmg](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.7/tonuino-toolbox-1.1.7.dmg)
+[tonuino-toolbox-1.1.8.dmg](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.8/tonuino-toolbox-1.1.8.dmg)
 
 #### Ubuntu/Debian Linux
 
-[tonuino-toolbox-1.1.7-linux-amd64.deb](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.7/tonuino-toolbox-1.1.7-linux-amd64.deb)
+[tonuino-toolbox-1.1.8-linux-amd64.deb](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.8/tonuino-toolbox-1.1.8-linux-amd64.deb)
 
 #### CentOS Suse Fedora rpm Linux Package
 
-[tonuino-toolbox-1.1.7-linux-x86_64.rpm](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.7/tonuino-toolbox-1.1.7-linux-x86_64.rpm)
+[tonuino-toolbox-1.1.8-linux-x86_64.rpm](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.8/tonuino-toolbox-1.1.8-linux-x86_64.rpm)
 
 #### AppImage
 
-[tonuino-toolbox-1.1.7-linux-x86_64.AppImage](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.7/tonuino-toolbox-1.1.7-linux-x86_64.AppImage)
+[tonuino-toolbox-1.1.8-linux-x86_64.AppImage](https://github.com/raph-ael/tonuino-toolbox/releases/download/v1.1.8/tonuino-toolbox-1.1.8-linux-x86_64.AppImage)
 
 ## Development
 
