@@ -189,6 +189,7 @@ let devices = {
         let files = await filesystem.list(drive.path);
 
         let allowed = ['mp3', 'advert'];
+        let system_mp3_folder = allowed;
 
         for(let i=1;i<=99;i++) {
             allowed.push(('00'+i).slice(-2))
@@ -229,10 +230,11 @@ let devices = {
                     if(mp3s.length === 0) {
                         await filesystem.removeAll(current_path);
                     }
+
                     /*
-                     * Mp3s sortieren, falls eine Nummer fehlt
+                     * Mp3s sortieren, wenn kein system Ordner
                      */
-                    else {
+                    else if(system_mp3_folder.indexOf(file) === -1){
                         await filesystem.mp3Sorter(current_path);
                     }
                 }
