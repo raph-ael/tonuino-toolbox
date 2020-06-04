@@ -1,0 +1,15 @@
+tr .btn-stop-mp3 {
+    display: none;
+}
+tr.is-playing .btn-stop-mp3 {
+    display: inline-block;
+}
+tr.is-playing .btn-play-mp3 {
+    display: none;
+}
+tr.is-playing {
+    background-color: #ddd;
+}
+.table-striped tr.is-playing {
+    background-color: #dddddd;
+}
