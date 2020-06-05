@@ -31,17 +31,12 @@ const registerProtocols = () => {
     callback({
       path: path.normalize(app.getPath('userData') + '/coverart/' + url)
     });
-
-  }, (error) => {
-    if (error) console.error('Failed to register protocol')
   });
 
   protocol.interceptFileProtocol('static', (request, callback) => {
     const url = request.url.split('static://')[1].trim();
     callback({ path: path.normalize(`${__dirname}/static/${url}`)})
-  }, (err) => {
-    if (err) console.error('Failed to register protocol')
-  })
+  });
 
 };
 
