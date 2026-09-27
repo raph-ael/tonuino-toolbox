@@ -49,24 +49,22 @@ let folder_list = {
             title = folder.albums.join(', ');
         }
 
-        if(folder.artists.length > 0) {
-            title += '<br>' + folder.artists.join(', ');
-        }
-
         let image_src = 'static://img/cover_placeholder.png';
         if(folder.image) {
             image_src = 'coverart://' + folder.image;
         }
 
-        let $li = $(`
-            <li data-number="` + parseInt(folder.folder_name) + `" class="list-group-item list-folder-tonuino list-folder-tonuino-` + folder.folder_name + `">
-            <img class="media-object pull-left" src="` + image_src + `" width="52" height="52">
-            <div class="media-body">
-              <strong>` + folder.folder_name + `</strong> <span class="pull-right">` + folder.title.length + ` Titel</span>
-              <p>` + title + `</p>
-            </div>
-          </li>
-        `);
+        let $li = $('<li class="list-group-item list-folder-tonuino">')
+            .attr('data-number', parseInt(folder.folder_name, 10))
+            .addClass('list-folder-tonuino-' + folder.folder_name);
+        let $body = $('<div class="media-body">');
+        let $title = $('<p>').text(title);
+        if(folder.artists.length > 0) {
+            $title.append('<br>').append(document.createTextNode(folder.artists.join(', ')));
+        }
+        $body.append($('<strong>').text(folder.folder_name), ' ',
+            $('<span class="pull-right">').text(folder.title.length + ' Titel'), $title);
+        $li.append($('<img class="media-object pull-left" width="52" height="52">').attr('src', image_src), $body);
 
         $li.click(() => {
             folder_list.$list.find('.active').removeClass('active');
@@ -124,30 +122,20 @@ let folder_list = {
             title = 'Tonuino Sprachansagen';
         }
 
-        return $(`
-            <li class="list-group-item">
-            <img class="media-object pull-left" src="http://via.placeholder.com/32x32" width="32" height="32">
-            <div class="media-body">
-              <strong>` + folder.folder_name + `</strong>
-              <p>` + title + `</p>
-            </div>
-          </li>
-        `);
+        return $('<li class="list-group-item">')
+            .append($('<img class="media-object pull-left" width="32" height="32">').attr('src', 'static://img/cover_placeholder.png'))
+            .append($('<div class="media-body">')
+                .append($('<strong>').text(folder.folder_name), $('<p>').text(title)));
     },
 
     renderOther: (folder) => {
 
         let title = folder.name;
 
-        return $(`
-            <li class="list-group-item">
-            <img class="media-object pull-left" src="http://via.placeholder.com/32x32" width="32" height="32">
-            <div class="media-body">
-              <strong>` + folder.folder_name + `</strong>
-              <p>` + title + `</p>
-            </div>
-          </li>
-        `);
+        return $('<li class="list-group-item">')
+            .append($('<img class="media-object pull-left" width="32" height="32">').attr('src', 'static://img/cover_placeholder.png'))
+            .append($('<div class="media-body">')
+                .append($('<strong>').text(folder.folder_name), $('<p>').text(title)));
     }
 
 };

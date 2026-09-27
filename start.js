@@ -1,13 +1,7 @@
 const path = require('path');
 const { app, BrowserWindow, ipcMain, protocol, dialog, globalShortcut, Menu } = require('electron');
 const { autoUpdater } = require('electron-updater');
-const log = require('electron-log');
 const template = require('./menu');
-const pLogger = require('pretty-logger');
-
-let loggi = new pLogger({
-
-});
 
 let mainWindow, dialogWindow, workerWindow;
 
@@ -90,29 +84,6 @@ const createWindow = () => {
   ipcMain.on('answer-from-worker', (event, arg) => {
     sendWindowMessage(mainWindow, 'answer-from-worker', arg);
   });
-
-  ipcMain.on('logger-message', (event, arg) => {
-    let thread = path.basename(event.sender.history[0]).replace('.html','');
-
-    /*
-    if(loggi[arg.type]) {
-      if(typeof arg.message !== 'string') {
-        loggi[arg.type](JSON.stringify(arg.message));
-      }
-      else {
-        loggi[arg.type](arg.message);
-      }
-
-    }
-    else {
-      console.log(arg.type);
-      console.warn(thread, arg);
-    }
-    */
-
-
-  });
-
 
   /*
    * Main Window Actions

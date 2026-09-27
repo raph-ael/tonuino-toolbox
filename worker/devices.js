@@ -1,5 +1,5 @@
 const path = require('path');
-const nodeDiskInfo = require('node-disk-info');
+const { execFile } = require('child_process');
 const helper = require ("../helper");
 const fs = require('fs');
 const filesystem = require("./filesystem");
@@ -9,6 +9,7 @@ const util = require('util');
 const logger = require('../logger');
 
 const dfp = util.promisify(df);
+const execFileAsync = util.promisify(execFile);
 
 let devices = {
 
@@ -58,37 +59,35 @@ let devices = {
     },
 
     listWindows: async () => {
-        const drives = await nodeDiskInfo.getDiskInfoSync();
+        // WMIC is no longer available on current Windows 11 versions.
+        // Keep the result as an array even if Windows finds only one drive.
+        const script = [
+            "$ErrorActionPreference = 'Stop'",
+            '$drives = @(Get-CimInstance -ClassName Win32_LogicalDisk -ErrorAction Stop | Select-Object DeviceID,Size,FreeSpace)',
+            'ConvertTo-Json -InputObject $drives -Compress'
+        ].join('; ');
+        const { stdout } = await execFileAsync('powershell.exe',
+            ['-NoProfile', '-NonInteractive', '-Command', script],
+            { windowsHide: true, timeout: 15000, maxBuffer: 1024 * 1024 });
+        const drives = JSON.parse(stdout.trim());
 
         let out = [];
 
         await helper.asyncForEach(drives, async (drive) => {
+            const size = Number(drive.Size);
+            const free = Number(drive.FreeSpace);
+            const name = drive.DeviceID;
 
-            if(drive.blocks > 1999136 && drive.filesystem.indexOf('udev') === -1 && drive.filesystem.indexOf('tmpfs') === -1) {
-                let mount_parts = drive.mounted.split('/');
-                let name = mount_parts[mount_parts.length-1]+'';
-                if(name === '') {
-                    name = drive.filesystem;
-                }
-
-                let faktor = 1024;
-                if(helper.isWindows()) {
-                    faktor = 1;
-                    name += '/';
-                }
-                else if(helper.isMac()) {
-                    faktor = 512;
-                }
-
+            if(/^[A-Z]:$/i.test(name) && size > 1999136 && Number.isFinite(free)) {
                 out.push({
-                    name: name,
-                    path: drive.mounted,
-                    size: drive.blocks*faktor,
-                    free: drive.available*faktor,
-                    busy: drive.used*faktor,
-                    size_format: helper.bytesToSize(drive.blocks*faktor),
-                    free_format: helper.bytesToSize(drive.available*faktor),
-                    busy_format: helper.bytesToSize(drive.used*faktor)
+                    name: name + '/',
+                    path: name + '\\',
+                    size: size,
+                    free: free,
+                    busy: size - free,
+                    size_format: helper.bytesToSize(size),
+                    free_format: helper.bytesToSize(free),
+                    busy_format: helper.bytesToSize(size - free)
                 });
             }
 

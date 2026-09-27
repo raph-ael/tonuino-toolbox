@@ -121,7 +121,7 @@ let theapp = {
          * listen for status messages
          */
         ipcRenderer.on('status-message', (event, arg) => {
-            theapp.$status_message.html(arg.message);
+            theapp.$status_message.text(arg.message);
         });
 
 

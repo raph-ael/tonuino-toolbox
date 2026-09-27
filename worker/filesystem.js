@@ -125,7 +125,7 @@ let filesystem = {
                             if(options.status_text !== undefined) {
                                 message = options.status_text + ' ';
                             }
-                            message += file + '<br>' + track.name + ' - ' + track.artist;
+                            message += file + '\n' + track.name + ' - ' + track.artist;
 
                             ipcRenderer.send('status-message', {
                                 message: message

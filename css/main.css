@@ -44,3 +44,6 @@ header .btn-group, header .btn {
 .toolbar-footer h1 i:before, .toolbar-footer h1 > span {
     cursor: pointer;
 }
+.status-message {
+  white-space: pre-line;
+}

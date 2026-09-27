@@ -41,14 +41,20 @@ let device_select = {
 
         worker_api.command('list_devices', {
             success: async (devices) => {
+                if(!Array.isArray(devices)) {
+                    msg.info('Laufwerke konnten nicht gelesen werden: ' + (devices.error || 'Unbekannter Fehler'));
+                    if(options.callback) {
+                        options.callback([]);
+                    }
+                    device_select.$devices_refresh_icon.removeClass('fa-spin');
+                    return;
+                }
 
                 await helper.asyncForEach(devices, async (device) => {
 
-                    let $li = $(`
-                        <li class="list-group-item">
-                          <span class="icon icon-drive icon-text"></span> ` + device.name + ` <strong>` + device.size_format + `</strong>
-                        </li>
-                    `);
+                    let $li = $('<li class="list-group-item"><span class="icon icon-drive icon-text"></span></li>');
+                    $li.append(document.createTextNode(' ' + device.name + ' '));
+                    $li.append($('<strong>').text(device.size_format));
 
                     /*
                      * wenn <= 32GB gehen wir von einer SD-Karte aus

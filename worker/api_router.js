@@ -35,9 +35,13 @@ let api_router = {
     },
 
     list_devices: async (params, callback) => {
-
-        let drives = await devices.list();
-
+        let drives;
+        try {
+            drives = await devices.list();
+        } catch (error) {
+            callback({ error: error.message });
+            return;
+        }
         callback(drives);
 
     },

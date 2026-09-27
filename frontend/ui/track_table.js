@@ -176,16 +176,25 @@ let track_table = {
     },
 
     renderRow: (track, folder) => {
-        let $tr = $(`
-            <tr data-path="` + track.path + `">
-                <td><button class="btn btn-mini btn-default btn-play-mp3"><span class="icon icon-play"></span></button><button class="btn btn-mini btn-default btn-stop-mp3"><span class="icon icon-stop"></span></button></td>
-                <td>` + track.file + `</td>
-                <td class="editable" data-path="` + track.path + `" data-file="` + track.file + `" data-folder="` + folder.name + `" data-tag="title">` + track.name + `</td>
-                <td class="editable" data-path="` + track.path + `" data-file="` + track.file + `" data-folder="` + folder.name + `" data-tag="artist">` + track.artist + `</td>
-                <td class="editable" data-path="` + track.path + `" data-file="` + track.file + `" data-folder="` + folder.name + `" data-tag="album">` + track.album + `</td>
-                <td class="editable" data-path="` + track.path + `"  data-file="` + track.file + `" data-folder="` + folder.name + `" data-tag="trackNumber">` + track.track + `</td>
-            </tr>
-        `);
+        let $tr = $('<tr>').attr('data-path', track.path);
+        let $actions = $('<td>');
+        $actions.append($('<button class="btn btn-mini btn-default btn-play-mp3"><span class="icon icon-play"></span></button>'));
+        $actions.append($('<button class="btn btn-mini btn-default btn-stop-mp3"><span class="icon icon-stop"></span></button>'));
+        $tr.append($actions, $('<td>').text(track.file));
+
+        [
+            ['title', track.name],
+            ['artist', track.artist],
+            ['album', track.album],
+            ['trackNumber', track.track]
+        ].forEach(([tag, value]) => {
+            $tr.append($('<td class="editable">')
+                .attr('data-path', track.path)
+                .attr('data-file', track.file)
+                .attr('data-folder', folder.name)
+                .attr('data-tag', tag)
+                .text(value == null ? '' : value));
+        });
 
         if(track.path === track_table.playing_file) {
             $tr.addClass('is-playing');
